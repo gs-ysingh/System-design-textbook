@@ -8,6 +8,7 @@ A comprehensive collection of system design concepts, patterns, and architecture
 
 - [Foundation Part 1](Foundation%20Part%201.md)
 - [Foundation Part 2](Foundation%20Part%202.md)
+- [Networking](Networking.md)
 
 ### Core Components
 
@@ -18,6 +19,7 @@ A comprehensive collection of system design concepts, patterns, and architecture
 - [API Gateway](API%20Gateway.md)
 - [Load Balancer](Load%20balancer.md)
 - [Load Balancer and Locks](Load%20balancer%20and%20locks.md)
+- [Real Time Communication](Real%20time%20communication.md)
 
 ### Storage Systems
 
