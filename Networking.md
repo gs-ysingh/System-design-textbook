@@ -173,11 +173,6 @@ That's why modern systems often:
 
 ## Load Balancers
 
-
----
-
-## Load Balancers
-
 A load balancer is like a traffic cop 🚦 standing in front of a group of servers. Its job is to decide which server should handle each incoming request — so no single server gets overloaded.
 
 In big systems (like chat apps, e-commerce sites, or streaming platforms), you almost never have just one server. You have many servers, and a load balancer in front of them to split the work evenly.

@@ -28,15 +28,17 @@ To build a reliable, scalable, extensible, and maintainable system that satisfie
 - Focuses on **structure**, **data flow**, and **integration**.
 
 ### 2.2 Logical Design (Business Logic & Extensibility)
+
 - Defines **algorithms**, **rules**, and **flows** that govern the system.  
 - Examples:
-  - Tinder ensures a user doesn’t see the same profile twice.
+  - Tinder ensures a user doesn't see the same profile twice.
   - Banking systems maintain transaction integrity.
 - Key Principle: **Extensibility**
   - Use abstractions (DAO, service layer) to decouple components.
   - Enables changing DB providers or cloud infra with minimal impact.
 
 ### 2.3 Physical Design (Infrastructure & Deployment)
+
 - Deals with real-world constraints:
   - Cloud configuration (AWS, Azure, GCP)
   - Instance sizing, IOPS, disk types
@@ -58,15 +60,18 @@ To build a reliable, scalable, extensible, and maintainable system that satisfie
 ## 4. Scoping a System
 
 Every design must define:
+
 - **Functional Scope:** End-user features.
 - **Non-Functional Scope:** Performance, availability, consistency, security.
 
 ### Ask Critical Questions
-- “What if traffic increases 10x?”
-- “What happens if one data center fails?”
-- “Can we migrate to a new DB easily?”
+
+- "What if traffic increases 10x?"
+- "What happens if one data center fails?"
+- "Can we migrate to a new DB easily?"
 
 ### Seek Clarifications
+
 Ambiguity kills design quality.  
 Clarify early between SQL vs NoSQL, queue vs stream, or which consistency guarantees matter most.
 
@@ -150,6 +155,7 @@ The choice directly affects **latency**, **reliability**, and **scalability**.
 ## 10. Practical Example – Designing a Blog System
 
 ### 10.1 Requirements
+
 - Single-user blog  
 - Multiple posts with tags  
 - Search by keyword  
@@ -203,6 +209,7 @@ API Server ──────────────► Cache (Redis)
 | updated_at | Last modification timestamp |
 
 **Notes:**
+
 - `slug` → SEO-friendly URL version of title.  
 - `excerpt` → One-line teaser for the post list.  
 - `is_deleted` → Supports soft delete and recovery.  
@@ -230,6 +237,7 @@ API Server ──────────────► Cache (Redis)
 | **blogs_tags** | blog_id, tag_id |
 
 **Notes:**
+
 - Integer foreign keys are faster than string matches.  
 - Enables tag renames without rewriting blog rows.  
 

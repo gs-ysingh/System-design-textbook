@@ -56,7 +56,7 @@ It becomes complex at **scale**, especially across distributed systems where mul
 
 **Structure (64-bit):**
 
-```
+```text
 41 bits → timestamp (epoch ms)
 10 bits → machine ID
 12 bits → sequence number

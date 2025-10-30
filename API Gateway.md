@@ -10,11 +10,11 @@
 | no-cache | Cache locally but always revalidate. | Dynamic API responses. |
 | public | Anyone (browser, CDN) can cache. | Static content, images. |
 | private | Only the browser can cache. | User-specific content. |
-| max-age=<sec> | Time (in sec) resource stays fresh. | max-age=3600 → 1 hour. |
-| s-maxage=<sec> | Like max-age but for shared caches (CDNs). | s-maxage=300. |
+| max-age=\<sec\> | Time (in sec) resource stays fresh. | max-age=3600 → 1 hour. |
+| s-maxage=\<sec\> | Like max-age but for shared caches (CDNs). | s-maxage=300. |
 | must-revalidate | Once expired, must revalidate. | Ensures freshness. |
 | immutable | Resource will not change. | Versioned JS/CSS files. |
-| stale-while-revalidate=<sec> | Serve stale while fetching fresh. | stale-while-revalidate=30. |
+| stale-while-revalidate=\<sec\> | Serve stale while fetching fresh. | stale-while-revalidate=30. |
 
 **Examples:**
 
