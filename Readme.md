@@ -49,6 +49,7 @@ A comprehensive collection of system design concepts, patterns, and architecture
 ### Utilities
 
 - [ID Generators](Id%20Generators.md)
+- [Consistent Hashing](Consistent%20Hashing.md)
 
 ---
 

@@ -316,6 +316,81 @@ Persistent connections (e.g., chats, collaborative apps).
 
 Massive fan-out systems (feeds, comments, dashboards).
 
+#### 🧭 Step-by-Step Flow
+
+Let's take an example where user A sends a message to user B.
+
+**1️⃣ User A sends a message**
+
+Client → WebSocket Server 1
+
+Server 1 publishes the message to Pub/Sub topic: `topic:user:B`
+
+```javascript
+pubsub.publish("topic:user:B", {
+  sender: "A",
+  message: "Hi!"
+});
+```
+
+**2️⃣ Pub/Sub broker broadcasts it**
+
+The Pub/Sub system sees that `topic:user:B` has subscribers.
+
+It forwards the message to all subscribers of that topic (i.e., the WebSocket servers connected to B).
+
+**Example brokers:**
+
+- 🧱 Redis Pub/Sub
+- ⚡ Kafka
+- ☁️ Google Pub/Sub
+- 🐘 RabbitMQ
+
+**3️⃣ The right WebSocket server gets the message**
+
+Let's say User B is connected to WebSocket Server 3.
+
+Server 3 is subscribed to `topic:user:B`.
+
+Broker delivers the message to Server 3.
+
+```javascript
+pubsub.subscribe("topic:user:B", (data) => {
+  sendToClient("B", data);
+});
+```
+
+**4️⃣ WebSocket Server → Client**
+
+Server 3 looks up which socket connection belongs to user B.
+
+It sends the message over that live connection (WebSocket or SSE).
+
+**Result:**
+Instant message delivery across servers — even if users are connected to different machines.
+
+**🧱 Architecture Diagram (conceptually)**
+
+```
+      +-----------+         +-----------------+
+      |  User A   |         |     User B      |
+      | (Client)  |         |   (Client)      |
+      +-----+-----+         +--------+--------+
+            |                         ^
+            | WebSocket               |
+            v                         |
+    +---------------+          +---------------+
+    | WebSocket Srv1|          | WebSocket Srv3|
+    +-------+-------+          +-------+-------+
+            |                           ^
+            | publish                   |
+            v                           |
+        +-------------------------------+
+        |          Pub/Sub Broker       |
+        | (Redis, Kafka, RabbitMQ, etc.)|
+        +-------------------------------+
+```
+
 #### Interview Tip
 
 "We can use Redis or Kafka Pub/Sub to fan out messages efficiently and keep endpoints stateless."
