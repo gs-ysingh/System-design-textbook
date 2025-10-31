@@ -25,6 +25,12 @@ A comprehensive collection of system design concepts, patterns, and architecture
 
 - [Storage Engines Part 1](Storage%20Engines%20Part%201.md)
 - [Storage Engines Part 2](Storage%20Engines%20Part%202.md)
+- [Large Blobs](Large%20Blobs.md)
+
+### Scaling
+
+- [Scaling Reads](Scaling%20Reads.md)
+- [Scaling Writes](Sacling%20Writes.md)
 
 ### High Throughput Systems
 
