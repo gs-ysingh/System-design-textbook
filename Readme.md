@@ -56,6 +56,12 @@ A comprehensive collection of system design concepts, patterns, and architecture
 
 - [ID Generators](Id%20Generators.md)
 - [Consistent Hashing](Consistent%20Hashing.md)
+- [Contention](Contention.md)
+
+### Process Management
+
+- [Managing Long Running Tasks](Managing%20long%20running%20tasks.md)
+- [Multi Step Process](Multi%20step%20process.md)
 
 ---
 
