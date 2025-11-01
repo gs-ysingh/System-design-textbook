@@ -9,6 +9,7 @@ A comprehensive collection of system design concepts, patterns, and architecture
 - [Foundation Part 1](Foundation%20Part%201.md)
 - [Foundation Part 2](Foundation%20Part%202.md)
 - [Networking](Networking.md)
+- [Back of Envelope Calculations](Back%20of%20envelope.md)
 
 ### Core Components
 
